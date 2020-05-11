@@ -1,7 +1,9 @@
 # Using Option
+> 使用 Option
 
 Particularly observant readers may have noticed that we actually reinvented
 a really bad version of Option:
+> 一些细心的读者可能注意到，我们其实在使用重新发明的设计不良的 Option：
 
 ```rust ,ignore
 enum Link {
@@ -16,6 +18,9 @@ to the outside world, so maybe it's fine. However Option has some *really
 nice* methods that we've been manually implementing ourselves. Let's *not*
 do that, and replace everything with Options. First, we'll do it naively
 by just renaming everything to use Some and None:
+>Link 其实就是 `Option<Box<Node>>`. 现在，好的是不需要把`Option<Box<Node>>`写的到处都是，
+>与`pop`不同的是，我们没有 pub 它到外面，所以也许很好。不管怎样，使用 Option 都是一个极好的
+>方式，虽然我们之前使用的都是我们自己的实现，首先，我们天真的以仅仅重命名的方式使用 Some 和 None
 
 ```rust ,ignore
 use std::mem;
